@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Mr.Pomidor - useful and customizable Pomodoro timer!</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title"><img src="img/mr-pomidor-logo.png" alt="Mr.Pomidor app logo" class="logo">Mr.Pomidor</h1>
+        <p class="text">Pomodoro timer which helps you work smart!</p>
+    </header>
+
+    <div class="tabs">
+        <div id="timer" class="tab">pomodoro</div>
+        <div id="short" class="tab">short break</div>
+        <div id="long" class="tab">long break</div>
+        <div id="settings" class="settings">
+            <i class="fa-solid fa-gear settings__icon"></i>
+        </div>
+    </div>
+
+    <div class="timer">
+        <div class="timer__wrapper">
+            <svg class="progress-ring">
+                <circle class="progress-ring__circle" />
+            </svg>
+            <div class="timer__info">
+                <div id="time" class="timer__time">
+                    <span data-time="minutes">25</span>
+                    <span>:</span>
+                    <span data-time="seconds">00</span>
+                </div>
+                <button id="timeBtn" class="timer__button">start</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalWrapper" class="modal__wrapper">
+        <div id="modal" class="modal">
+            <div class="modal__header">
+                <h2 class="modal__title">Settings</h2>
+                <div id="reset" class="modal__reset">
+                    <i class="fa-regular fa-trash-can"></i>
+                </div>
+                <div id="cross" class="modal__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="time">
+                <h3 class="modal__subtitle">TIME (MINUTES)</h3>
+                <ul class="time__wrapper">
+                    <li class="time__item">
+                        <h4 class="time__subtitle">pomodoro</h4>
+                        <div class="number__wrapper">
+                            <button class="number-plus" type="button">
+                                <i class="fa-solid fa-angle-up arrow"></i>
+                            </button>
+                            <input id="inputPomodoro" type="number" min="1" max="60" class="time__input">
+                            <button class="number-minus" type="button">
+                                <i class="fa-solid fa-angle-up arrow arrow-bottom"></i>
+                            </button>
+                        </div>
+                    </li>
+                    <li class="time__item">
+                        <h4 class="time__subtitle">short break</h4>
+                        <div class="number__wrapper">
+                            <button class="number-plus" type="button">
+                                <i class="fa-solid fa-angle-up arrow"></i>
+                            </button>
+                            <input id="inputShort" type="number" min="1" max="60" class="time__input">
+                            <button class="number-minus" type="button">
+                                <i class="fa-solid fa-angle-up arrow arrow-bottom"></i>
+                            </button>
+                        </div>
+                    </li>
+                    <li class="time__item">
+                        <h4 id="longValue" class="time__subtitle">long break</h4>
+                        <div class="number__wrapper">
+                            <button class="number-plus" type="button">
+                                <i class="fa-solid fa-angle-up arrow"></i>
+                            </button>
+                            <input id="inputLong" type="number" min="1" max="60" class="time__input">
+                            <button class="number-minus" type="button">
+                                <i class="fa-solid fa-angle-up arrow arrow-bottom"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="color">
+                <h3 class="modal__subtitle">color</h3>
+                <ul class="color__wrapper">
+                    <li data-color="#FF715B" class="color__item red"></li>
+                    <li data-color="#5DA3FD" class="color__item blue"></li>
+                    <li data-color="#1EA896" class="color__item green"></li>
+                    <li data-color="#C05DAE" class="color__item purple"></li>
+                    <li data-color="#FEEA00" class="color__item yellow"></li>
+                </ul>
+            </div>
+            <button id="modalBtn" class="modal__button">Ok</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
